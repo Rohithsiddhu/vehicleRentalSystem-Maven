@@ -2,6 +2,9 @@ package com.example.vehiclerentalsystem.restcontroller;
 
 import java.util.List;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,32 +23,40 @@ import com.example.vehiclerentalsystem.service.IUserService;
 @RestController
 @RequestMapping("/api/user")
 public class UserRestController {
+	Logger logger = LoggerFactory.getLogger(UserRestController.class);
+	
+	
 	@Autowired
 	IUserService service;
 	
 	
 	@PostMapping("/add")
 	public UserDTO addUser(@RequestBody UserDTO user) {
+		logger.info("User added successfully");
 		return service.addUser(user);
 		
 	}
 	
 	@GetMapping("/get/{id}")
 	public UserDTO findById(@PathVariable Long id) throws Exception{
+		logger.info("User found with this id");
 		return service.findById(id);
 	}
 	@PutMapping("/put/{id}")
 	public UserDTO updateUser(@PathVariable Long id,@RequestBody UserDTO user) {
+		logger.info("User updated successfully");
 		return service.updateUser(user);
 	}
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	@DeleteMapping("/delete/{id}")
 	public void deleteById(@PathVariable Long id) {
+		logger.info("User deleted successfully");
 		 service.deleteById(id);
 	}
 	
 	@GetMapping("/getall")
 	public List<User> findAll(){
+		logger.info("User list ");
 		return service.findAll();
 	}
 }
