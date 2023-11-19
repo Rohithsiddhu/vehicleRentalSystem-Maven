@@ -1,0 +1,20 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import com.example.vehiclerentalsystem.entity.ContactUs;
+import com.example.vehiclerentalsystem.service.IContactUsService;
+
+public class ContctUsServiceImpl implements IContactUsService {
+
+	@Override
+	public ContactUs addDetails(ContactUs contactUs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ContactUs updateDetails(ContactUs contactUs) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

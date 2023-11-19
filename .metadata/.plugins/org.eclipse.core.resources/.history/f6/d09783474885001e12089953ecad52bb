@@ -1,0 +1,13 @@
+package com.example.vehiclerentalsystem.service;
+
+import com.example.vehiclerentalsystem.entity.ContactUs;
+
+public interface IContactUsService {
+	
+	public ContactUs addDetails(ContactUs contactUs);
+	public ContactUs updateDetails(ContactUs contactUs);
+	
+	
+	
+
+}

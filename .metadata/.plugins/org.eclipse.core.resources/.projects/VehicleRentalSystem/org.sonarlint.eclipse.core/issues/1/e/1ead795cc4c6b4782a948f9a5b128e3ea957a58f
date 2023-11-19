@@ -1,0 +1,19 @@
+
+™
+java:S1128"^Remove this unused import 'org.springframework.security.authentication.AuthenticationManager'.8Õ¯êŸ¾1b 54cbc43c23734efc1944c8fcb6517792h
+š
+java:S1128"_Remove this unused import 'org.springframework.security.authentication.AuthenticationProvider'.8Õ¯êŸ¾1b 9c9a63582002a01e557b0c27604d89e8h
+¡
+java:S1128"fRemove this unused import 'org.springframework.security.authentication.dao.DaoAuthenticationProvider'.8Õ¯êŸ¾1b 8833ee241492c0691c10923e44a07a8bh
+À
+java:S1128	"„Remove this unused import 'org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration'.8Õ¯êŸ¾1b 70d97c2dcdee6b38c8d11c0afdd962e1h
+–
+java:S1128"[Remove this unused import 'org.springframework.security.config.http.SessionCreationPolicy'.8Õ¯êŸ¾1b 3fa4690c0a4aab551c465b970a2f7715h
+˜
+java:S1128"]Remove this unused import 'org.springframework.security.core.userdetails.UserDetailsService'.8Õ¯êŸ¾1b 69e5bb9f8c391bd618fc3c0c40707dach
+¬
+java:S1128"qRemove this unused import 'org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter'.8Õ¯êŸ¾1b 39ba09df31492e1ceb9704f46f0ee9e2h
+˜
+java:S1128"]Remove this unused import 'org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'.8²Ã¶ ¾1b 99d1177ed9f94d2ac5a00afe249e4681h
+”
+java:S1128"YRemove this unused import 'org.springframework.security.crypto.password.PasswordEncoder'.8²Ã¶ ¾1b 979a92b1cb4ff77c3e517495c66e2ddeh

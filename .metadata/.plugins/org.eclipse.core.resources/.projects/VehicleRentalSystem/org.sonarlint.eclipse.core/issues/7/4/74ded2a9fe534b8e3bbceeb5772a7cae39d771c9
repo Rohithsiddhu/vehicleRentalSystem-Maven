@@ -1,0 +1,11 @@
+
+v
+java:S6813"BRemove this field injection and use constructor injection instead.b 0132ec8cee01c5dd244e1a60fe6448a1h
+—
+java:S2629H"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.8‘îµŠ¾1b 2d5b93554e972a873aff3a350e32f442h
+|
+java:S3457H"AFormat specifiers should be used instead of string concatenation.8‘îµŠ¾1b 149d9363a8444adece27a0536a72ed9bh
+r
+java:S26298"7Use the built-in formatting to construct this argument.8‘þ‰Ÿ¾1b 27d4d167111a0a4003e75d98477fc66fh
+|
+java:S34578"AFormat specifiers should be used instead of string concatenation.8‘þ‰Ÿ¾1b 0d9eebdfed8d999a1f62337d8d2e5d60h

@@ -1,0 +1,15 @@
+package com.example.vehiclerentalsystem.service;
+
+import com.example.vehiclerentalsystem.dto.ContactUsDTO;
+import com.example.vehiclerentalsystem.entity.ContactUs;
+
+public interface IContactUsService {
+	
+	public ContactUsDTO addDetails(ContactUsDTO contactUsDto);
+	public ContactUsDTO updateDetails(ContactUsDTO contactUsDto);
+	public ContactUsDTO getById(Long id);
+	public void deleteById(Long id);
+	
+	
+
+}

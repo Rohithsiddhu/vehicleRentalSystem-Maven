@@ -1,0 +1,15 @@
+package com.example.vehiclerentalsystem.service;
+
+import java.util.List;
+
+import com.example.vehiclerentalsystem.dto.TransactionDTO;
+import com.example.vehiclerentalsystem.entity.Transaction;
+
+public interface ITransactionService {
+	public TransactionDTO addTransaction(TransactionDTO transaction);
+	public TransactionDTO updateTransaction(TransactionDTO transaction);
+	public TransactionDTO findById()throws Exception;
+	public void deleteById(Long id);
+	public List<TransactionDTO> findAll();
+
+}

@@ -1,0 +1,24 @@
+
+o	java:S125%"<This block of commented-out lines of code should be removed.b ffa06d8cff6f7ef55cde0842ec26bb37h
+v	java:S125!"<This block of commented-out lines of code should be removed.8¾¬Âà½1b dc5e8a7f08da864575b696104957dc6eh
+f
+java:S1135+"2Complete the task associated to this TODO comment.b 36364ec9aa2f0995d283c1c6a92d2e5ch
+v
+java:S6813"BRemove this field injection and use constructor injection instead.b 0132ec8cee01c5dd244e1a60fe6448a1h
+—
+java:S2629M"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.8¹è‰¾1b 83d4722f7d73088a68ac3f4434eff5d6h
+|
+java:S3457M"AFormat specifiers should be used instead of string concatenation.8¹è‰¾1b 1ddf540e45cee9ab6272a1604f7eb319h
+v	java:S125J"<This block of commented-out lines of code should be removed.8²Ù®Š¾1b 85d4bc155a405ed52288ff7deb6349d1h
+k
+java:S1128"0Remove this unused import 'java.util.ArrayList'.8²Ù®Š¾1b 510ef3bd202c030c041eba1094753b66h
+m
+java:S1128"2Remove this unused import 'org.slf4j.event.Level'.8²Ù®Š¾1b 26da7e30e4c655186e444561720c84e3h
+|
+java:S1128"ARemove this unused import 'org.springframework.data.domain.Sort'.8²Ù®Š¾1b 09cc96446af512a5bd800fe522a47d51h
+
+java:S1128"FRemove this unused import 'org.springframework.stereotype.Repository'.8²Ù®Š¾1b 2ea8ba8c0dc400481bb6d88f974fb17bh
+r
+java:S2629#"7Use the built-in formatting to construct this argument.8ë›ƒŸ¾1b 0d0533dc855df7f96053e58cc6d2fd93h
+|
+java:S3457#"AFormat specifiers should be used instead of string concatenation.8ë›ƒŸ¾1b 881263fb55ea807678db41abbb386800h

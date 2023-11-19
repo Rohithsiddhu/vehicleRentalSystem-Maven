@@ -1,0 +1,21 @@
+
+v
+java:S6813"BRemove this field injection and use constructor injection instead.b 0132ec8cee01c5dd244e1a60fe6448a1h
+o
+java:S1854I";Remove this useless assignment to local variable "booking".b 2a8ef7a184bfb5f6116c8aae1e7762cch
+y	java:S112+"FDefine and throw a dedicated exception instead of using a generic one.b 15452a9b0f2356c3dabe720a67728b3dh
+v
+java:S6813"BRemove this field injection and use constructor injection instead.b 0132ec8cee01c5dd244e1a60fe6448a1h
+o
+java:S18547";Remove this useless assignment to local variable "booking".b e47749e7671586c3664a67f8bd1301d2h
+v
+java:S6813!"BRemove this field injection and use constructor injection instead.b 0132ec8cee01c5dd244e1a60fe6448a1h
+y	java:S112/"FDefine and throw a dedicated exception instead of using a generic one.b 15452a9b0f2356c3dabe720a67728b3dh
+—
+java:S2629Y"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.8Žþ¿Š¾1b e1bdb43454494c0f4c38040df3b2564dh
+p
+java:S3416"5Update this logger to use "BookingServiceImpl.class".8Žþ¿Š¾1b ad2f92a83994c63d3e85f1e1d124da30h
+|
+java:S3457Y"AFormat specifiers should be used instead of string concatenation.8Žþ¿Š¾1b 536e74d78c05ea2a809b6845d55dcde4h
+k
+java:S1128"0Remove this unused import 'java.util.ArrayList'.8Žþ¿Š¾1b 510ef3bd202c030c041eba1094753b66h

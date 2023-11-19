@@ -1,0 +1,12 @@
+package com.example.vehiclerentalsystem.repository;
+
+import org.springframework.stereotype.Repository;
+
+import com.example.vehiclerentalsystem.entity.User;
+@Repository
+public abstract  class  LoginRepository  extends JpaRepository<User,Long>{
+	
+	
+ abstract	 User findByUsernameAndPassword(String username,String password);
+
+}

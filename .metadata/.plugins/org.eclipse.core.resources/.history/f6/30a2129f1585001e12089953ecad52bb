@@ -1,0 +1,16 @@
+package com.example.vehiclerentalsystem.service;
+
+import java.util.List;
+
+import com.example.vehiclerentalsystem.dto.TestimonialDTO;
+import com.example.vehiclerentalsystem.entity.Testimonial;
+
+public interface ITestimonialService {
+	
+	public TestimonialDTO addTestimonial(TestimonialDTO testimonialDto );
+	public TestimonialDTO updateTestimonial(TestimonialDTO testimonial);
+	public void deleteById(Long id);
+	public List <TestimonialDTO> getAll(TestimonialDTO testimonialDto);
+	
+
+}

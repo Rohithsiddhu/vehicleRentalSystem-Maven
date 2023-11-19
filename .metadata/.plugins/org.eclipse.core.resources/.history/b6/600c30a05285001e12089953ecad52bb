@@ -1,0 +1,37 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.vehiclerentalsystem.dto.ContactUsDTO;
+import com.example.vehiclerentalsystem.entity.ContactUs;
+import com.example.vehiclerentalsystem.repository.ContactUsRepository;
+import com.example.vehiclerentalsystem.service.IContactUsService;
+
+public class ContactUsServiceImpl implements IContactUsService {
+	
+	@Autowired
+	ContactUsRepository repository;
+
+	@Override
+	public ContactUsDTO addDetails(ContactUsDTO contactUsDto) {
+		ContactUs contactus = new ContactUs();
+		BeanUtils.copyProperties(contactUsDto, contactus);
+		 contactus = repository.save(contactus);
+		BeanUtils.copyProperties(contactus, contactUsDto);
+
+		return contactUsDto;
+	}
+
+	@Override
+	public ContactUsDTO updateDetails(ContactUsDTO contactUsDto) {
+		
+		ContactUs contactus = new ContactUs();
+		BeanUtils.copyProperties(contactUsDto, contactus);
+		 contactus = repository.save(contactus);
+		BeanUtils.copyProperties(contactus, contactUsDto);
+
+		return contactUsDto;
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.example.vehiclerentalsystem.entity;
+
+import jakarta.persistence.Id;
+
+public class Testimonials {
+	@Id
+	private  long testimonialid;
+	private long userid;//foreign key
+	private String feedback;
+	private boolean isactive;
+	
+
+}

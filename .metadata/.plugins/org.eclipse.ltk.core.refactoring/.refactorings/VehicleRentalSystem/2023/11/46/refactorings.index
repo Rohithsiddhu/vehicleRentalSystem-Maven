@@ -1,0 +1,22 @@
+1699972195198	Delete element
+1699972214915	Rename package 'java.com.example.vehiclerentalsystem.dto'
+1699972239088	Rename package 'java.com.example.vehiclerentalsystem.entity'
+1699972251717	Rename package 'java.com.example.vehiclerentalsystem.repository'
+1699972266595	Rename package 'java.com.example.vehiclerentalsystem.restcontroller'
+1699972280222	Rename package 'java.com.example.vehiclerentalsystem.service'
+1699972293222	Rename package 'java.com.example.vehiclerentalsystem.serviceimpl'
+1699972681114	Rename type 'Testinomials'
+1700198811173	Rename type 'Testimonials'
+1700198830590	Rename type 'TestimonialsDTO'
+1700198886834	Delete element
+1700198901187	Rename type 'ITestimonialsService'
+1700198949051	Delete element
+1700199051381	Rename type 'TestimonialsRepository'
+1700225713442	Rename type 'ContctUsServiceImpl'
+1700228844916	Rename compilation unit 'TestimonialsRestController.java'
+1700297765987	Delete element
+1700299536512	Delete element
+1700299544688	Delete element
+1700299553755	Delete element
+1700299561226	Delete element
+1700300822582	Delete element

@@ -1,0 +1,5 @@
+package com.example.vehiclerentalsystem.repository;
+
+public interface ContactUsRepository {
+
+}

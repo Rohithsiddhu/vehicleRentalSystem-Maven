@@ -1,0 +1,88 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.example.vehiclerentalsystem.dto.UserDTO;
+import com.example.vehiclerentalsystem.entity.Role;
+import com.example.vehiclerentalsystem.entity.User;
+import com.example.vehiclerentalsystem.entity.Vehicle;
+import com.example.vehiclerentalsystem.repository.UserRepository;
+import com.example.vehiclerentalsystem.service.IUserService;
+@Service
+public class UserServiceImpl implements IUserService {
+	Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	
+	
+	@Autowired
+	UserRepository repository;
+
+	@Override
+	public UserDTO addUser(UserDTO userDto) {
+		User user = new User();
+		BeanUtils.copyProperties(userDto, user);
+		user =  repository.save(user);
+		BeanUtils.copyProperties(user,userDto);
+		logger.info("User added successfully");
+		return userDto;
+	}
+
+	@Override
+	public UserDTO updateUser(UserDTO userDto) {
+		User user = new User();
+		BeanUtils.copyProperties(userDto, user);
+		user =  repository.save(user);
+		BeanUtils.copyProperties(user,userDto);
+		logger.info("User updates successfully");
+		return userDto;
+	}
+
+	@Override
+	public UserDTO findById(Long id) throws Exception{
+		UserDTO userDto = new UserDTO();
+		User user =  repository.findById(id).orElseThrow(() -> new Exception("User not found - " + id));
+		BeanUtils.copyProperties(user,userDto);
+		logger.info("User found with"+id);
+		return userDto;		
+				
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		repository.deleteById(id);
+		logger.info("User deleted successfully");
+
+	}
+
+	@Override
+	public List<User> findAll() {
+		
+		 List<User> userList = repository.findAll();
+		 logger.info("the size of get all users: "+userList.size());
+		 return userList;
+	}
+	
+	  @Override
+	    public Collection<? extends GrantedAuthority> getAuthorities(User user) {
+
+	        Set<Role> roles = user.getRoles();
+	        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+
+	        for (Role role : roles) {
+	            authorities.add(new SimpleGrantedAuthority(role.getName()));
+	        }
+	        return authorities;
+	    }
+
+}

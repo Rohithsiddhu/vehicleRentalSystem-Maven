@@ -1,0 +1,9 @@
+
+”
+java:S2293:"YReplace the type specification in this constructor call with the diamond operator ("<>").8Øª¡à½1b 4123921962029fa57395ab6530eb38b3h
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8ˆÃÐß½1b 0132ec8cee01c5dd244e1a60fe6448a1h
+Œ
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.PathVariable'.8¿àðŸ¾1b 3fefe08136e702626d45679e08cd9028h
+†
+java:S1128"KRemove this unused import 'com.example.vehiclerentalsystem.entity.Vehicle'.8¿àðŸ¾1b a99934bb09c700cb864456a0cdeaa6cfh

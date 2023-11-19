@@ -1,0 +1,33 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import com.example.vehiclerentalsystem.dto.TestimonialsDTO;
+import com.example.vehiclerentalsystem.entity.Testimonials;
+import com.example.vehiclerentalsystem.service.ITestimonialsService;
+
+public class TestimonialsServiceImpl implements ITestimonialsService {
+
+	@Override
+	public Testimonials addTestimonials(TestimonialsDTO testimonials) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Testimonials updateTestimonials(TestimonialsDTO testimonials) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Testimonials getAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

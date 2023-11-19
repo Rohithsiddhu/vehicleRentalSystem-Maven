@@ -1,0 +1,73 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.example.vehiclerentalsystem.dto.TestimonialDTO;
+import com.example.vehiclerentalsystem.entity.Testimonial;
+import com.example.vehiclerentalsystem.entity.Vehicle;
+import com.example.vehiclerentalsystem.repository.TestimonialRepository;
+import com.example.vehiclerentalsystem.service.ITestimonialService;
+
+public class TestimonialServiceImpl implements ITestimonialService {
+	
+	@Autowired
+	TestimonialRepository repository;
+
+	@Override
+	public TestimonialDTO addTestimonial(TestimonialDTO testimonialDto) {
+		Testimonial testimonial = new Testimonial();
+		BeanUtils.copyProperties(testimonialDto, testimonial);
+		 testimonial = repository.save(testimonial);
+		 BeanUtils.copyProperties(testimonial,testimonialDto);
+		 return testimonialDto;
+		
+	}
+
+	@Override
+	public TestimonialDTO updateTestimonial(TestimonialDTO testimonialDto) {
+		Testimonial testimonial = new Testimonial();
+		BeanUtils.copyProperties(testimonialDto, testimonial);
+		testimonial = repository.save(testimonial);
+		BeanUtils.copyProperties(testimonialDto, testimonial);
+		return testimonialDto;
+		
+	
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		
+		  repository.deleteById(id);
+
+		
+
+	}
+
+	@Override
+	public  List<TestimonialDTO> getAll() {
+		
+		List<TestimonialDTO> testimonialDtoList = new ArrayList<TestimonialDTO>();
+		
+		
+		List<Testimonial> testimonialList = repository.findAll();
+		
+		BeanUtils.copyProperties(testimonialList, testimonialDtoList);
+		
+		return testimonialDtoList;
+	}
+
+	@Override
+	public TestimonialDTO findById(Long id) throws Exception {
+		TestimonialDTO testimonialDto = new TestimonialDTO();
+		Testimonial testimonial = repository.findById(id).orElseThrow(() -> new Exception("Testimonial not found - " + id));
+		BeanUtils.copyProperties(testimnial, testimonialDto);
+		
+		return testimonialDto;
+	}
+
+}

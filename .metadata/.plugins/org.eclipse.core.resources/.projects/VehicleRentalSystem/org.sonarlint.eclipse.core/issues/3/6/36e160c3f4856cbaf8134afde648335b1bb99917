@@ -1,0 +1,9 @@
+
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8í—¿¾1b 0132ec8cee01c5dd244e1a60fe6448a1h
+…
+java:S4488/"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"8í—¿¾1b da96c53f00f8b26f1cc29c20b05f4ee1h
+r
+java:S2629%"7Use the built-in formatting to construct this argument.8¼ÄÈ¾1b 720700805413acbd33489a9c9840785bh
+|
+java:S3457%"AFormat specifiers should be used instead of string concatenation.8¼ÄÈ¾1b e1cf605d768277d93e0b5e138af26988h

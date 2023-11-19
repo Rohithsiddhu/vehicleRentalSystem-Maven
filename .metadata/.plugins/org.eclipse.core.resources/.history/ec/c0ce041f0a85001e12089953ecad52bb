@@ -1,0 +1,14 @@
+package com.example.vehiclerentalsystem.service;
+
+import com.example.vehiclerentalsystem.dto.TestimonialDTO;
+import com.example.vehiclerentalsystem.entity.Testimonial;
+
+public interface ITestimonialsService {
+	
+	public Testimonial addTestimonials(TestimonialDTO testimonials );
+	public Testimonial updateTestimonials(TestimonialDTO testimonials);
+	public void deleteById(Long id);
+	public Testimonial getAll();
+	
+
+}

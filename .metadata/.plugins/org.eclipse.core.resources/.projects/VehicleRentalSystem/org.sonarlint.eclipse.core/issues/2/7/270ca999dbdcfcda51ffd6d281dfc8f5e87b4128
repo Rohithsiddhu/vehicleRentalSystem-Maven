@@ -1,0 +1,9 @@
+
+}
+java:S6813"BRemove this field injection and use constructor injection instead.8‘ÙØá½1b 0132ec8cee01c5dd244e1a60fe6448a1h
+r
+java:S26290"7Use the built-in formatting to construct this argument.8¥¢Ÿ¾1b a5495ac549f96887e75b6c4f7ccb7be0h
+|
+java:S34570"AFormat specifiers should be used instead of string concatenation.8¥¢Ÿ¾1b ee1d48d5954f2460baac875284511e28h
+k
+java:S1128"0Remove this unused import 'java.util.ArrayList'.8¥¢Ÿ¾1b 510ef3bd202c030c041eba1094753b66h

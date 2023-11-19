@@ -1,0 +1,61 @@
+package com.example.vehiclerentalsystem.serviceimpl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.vehiclerentalsystem.dto.TransactionDTO;
+import com.example.vehiclerentalsystem.entity.Transaction;
+import com.example.vehiclerentalsystem.repository.TransactionRepository;
+import com.example.vehiclerentalsystem.service.ITransactionService;
+
+public class TransactionServiceImpl implements ITransactionService {
+	@Autowired
+	TransactionRepository repository;
+
+	@Override
+	public TransactionDTO addTransaction(TransactionDTO transactionDTO) {
+	 Transaction transaction = new Transaction();
+	 BeanUtils.copyProperties(transactionDTO, transaction);
+	  transaction = repository.save(transaction);
+	  BeanUtils.copyProperties(transactionDTO, transaction);
+		return transactionDTO;
+	}
+
+	@Override
+	public TransactionDTO updateTransaction(TransactionDTO transactionDTO) {
+		
+		Transaction transaction = new Transaction();
+		 BeanUtils.copyProperties(transactionDTO, transaction);
+		  transaction = repository.save(transaction);
+		  BeanUtils.copyProperties(transaction, transactionDTO);
+			return transactionDTO;
+	}
+
+	@Override
+	public TransactionDTO findById(Long id) throws Exception {
+	 TransactionDTO transactionDto = new TransactionDTO();
+	 Transaction transaction = repository.findById(id).orElseThrow(() -> new Exception("Vehicle not found - " + id));
+	 BeanUtils.copyProperties(transactionDto, transaction);
+		return transactionDto;
+	}
+
+	
+
+	@Override
+	public void deleteById(Long id) {
+		repository.existsById(id);
+		
+	}
+
+	@Override
+	public List<TransactionDTO> findAll() {
+		 List<TransactionDTO> transactionDtoList = new ArrayList<TransactionDTO>();
+		 List<Transaction> transactionList = repository.findAll();
+		 BeanUtils.copyProperties(transactionList, transactionDtoList);
+		return transactionDtoList;
+	}
+
+}
