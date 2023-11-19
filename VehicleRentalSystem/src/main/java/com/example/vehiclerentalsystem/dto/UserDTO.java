@@ -1,5 +1,9 @@
 package com.example.vehiclerentalsystem.dto;
 
+import java.util.Set;
+
+import com.example.vehiclerentalsystem.entity.Role;
+
 public class UserDTO {
 
 	private long userid;
@@ -10,25 +14,13 @@ public class UserDTO {
 	private String aadhar;
 	private String drivingLicence;
 	private String address;
-	private String role;
+	 private Set<Role> roles ;
 	
 	public UserDTO() {
 		super();
 	}
 	
-		public UserDTO(long userid, String email, String password, String name, String contactNumber, String aadhar,
-		String drivingLicence, String address, String role) {
-		super();
-		this.userid = userid;
-		this.email = email;
-		this.password = password;
-		this.name = name;
-		this.contactNumber = contactNumber;
-		this.aadhar = aadhar;
-		this.drivingLicence = drivingLicence;
-		this.address = address;
-		this.role = role;
-	}
+		
 
 		public long getUserid() {
 		return userid;
@@ -80,12 +72,19 @@ public class UserDTO {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getRole() {
-		return role;
+
+
+
+	public Set<Role> getRoles() {
+		return roles;
 	}
-	public void setRole(String role) {
-		this.role = role;
+
+
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
 	}
+
 	
 	
 	

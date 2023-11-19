@@ -38,7 +38,7 @@ public class UserRestController {
 	public UserDTO updateUser(@PathVariable Long id,@RequestBody UserDTO user) {
 		return service.updateUser(user);
 	}
-	@PreAuthorize("hasAuthority('ADMIN')")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	@DeleteMapping("/delete/{id}")
 	public void deleteById(@PathVariable Long id) {
 		 service.deleteById(id);
