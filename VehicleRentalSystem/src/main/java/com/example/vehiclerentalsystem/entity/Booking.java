@@ -26,18 +26,19 @@ public class Booking {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long id;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "userid")
-	//@Pattern(regexp = "[A-Za-z")
-    private User user;
-
-	@ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "vehicle_id")
-	private Vehicle vehicle;
     @JsonFormat(pattern="yyyy-MM-dd ")
 	private Date fromDate;
 	@JsonFormat(pattern="yyyy-MM-dd ")
 	private Date toDate;
+	
+
+	@ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+	@ManyToOne
+    @JoinColumn(name = "vehicle_id")
+	private Vehicle vehicle;
 	
 	public Booking() {
 		super();

@@ -21,7 +21,7 @@ import jakarta.validation.constraints.Size;
 public class User {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	private long userid;
+	private long id;
 	//@NotNull(message = "Email is mandatory")
 	@Email
 	private String email;
@@ -45,9 +45,7 @@ public class User {
 	@NotBlank
 	private String address;
 	
-	@OneToMany(fetch = FetchType.EAGER)
-	@JoinColumn(name = "id")
-    private Set<Role> roles ;
+	private String roles;
 
     private boolean enabled;
 	
@@ -56,13 +54,16 @@ public class User {
 		super();
 	}
 	
-		public long getUserid() {
-		return userid;
+	
+		public long getId() {
+		return id;
 	}
 
-	public void setUserid(long userid) {
-		this.userid = userid;
+
+	public void setId(long id) {
+		this.id = id;
 	}
+
 
 		public String getEmail() {
 		return email;
@@ -107,11 +108,11 @@ public class User {
 		this.address = address;
 	}
 
-	public Set<Role> getRoles() {
+	public String getRoles() {
 		return roles;
 	}
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(String roles) {
 		this.roles = roles;
 	}
 
@@ -123,12 +124,12 @@ public class User {
 		this.enabled = enabled;
 	}
 
-	public User(long userid, @Email String email, @NotNull @Size(min = 4, max = 15) String password,
+	public User(long id, @Email String email, @NotNull @Size(min = 4, max = 15) String password,
 			@NotNull(message = "Name is mandatory") String name, @Size(min = 10, max = 10) String contactNumber,
-			@Size(min = 12, max = 12) String aadhar, String drivingLicence, @NotBlank String address, Set<Role> roles,
+			@Size(min = 12, max = 12) String aadhar, String drivingLicence, @NotBlank String address, String roles,
 			boolean enabled) {
 		super();
-		this.userid = userid;
+		this.id = id;
 		this.email = email;
 		this.password = password;
 		this.name = name;

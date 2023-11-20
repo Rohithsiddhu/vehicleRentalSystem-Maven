@@ -55,7 +55,7 @@ class UserServiceImpTest {
 
 	      
 	        assertNotNull(result);
-	        assertEquals(user.getUserid(), result.getUserid());
+	        assertEquals(user.getId(), result.getId());
 	        assertEquals(user.getEmail(), result.getEmail());
 	        assertEquals("encodedPassword", result.getPassword());
 	        assertEquals(user.getName(), result.getName());
@@ -78,7 +78,7 @@ class UserServiceImpTest {
 	        UserDTO result = userService.updateUser(userDto);
 
 	        assertNotNull(result);
-	        assertEquals(user.getUserid(), result.getUserid());
+	        assertEquals(user.getId(), result.getId());
 	        assertEquals(user.getEmail(), result.getEmail());
 	        assertEquals("encodedPassword", result.getPassword());
 	        assertEquals(user.getName(), result.getName());
@@ -113,7 +113,7 @@ class UserServiceImpTest {
 
 	        
 	        assertNotNull(result);
-	        assertEquals(user.getUserid(), result.getUserid());
+	        assertEquals(user.getId(), result.getId());
 	        assertEquals(user.getEmail(), result.getEmail());
 	        assertEquals("encodedPassword", result.getPassword());
 	        assertEquals(user.getName(), result.getName());
@@ -149,7 +149,7 @@ class UserServiceImpTest {
 
 	    private User createUser() {
 	        User user = new User();
-	        user.setUserid(1);
+	        user.setId(1);
 	        user.setEmail("abc@example.com");
 	        user.setPassword("password");
 	        user.setName("Abhay");

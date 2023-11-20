@@ -1,5 +1,6 @@
 package com.example.vehiclerentalsystem.config;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
@@ -22,14 +23,13 @@ public class UserRoles implements UserDetails{
 	
 	 private String name;
 	    private String password;
-	    private List<GrantedAuthority> authorities;
+	    private List<String> authorities;
 	    
 	    public UserRoles(User user) {
 	        name=user.getName();
 	        password=user.getPassword();
-	        authorities= user.getRoles().stream().map(r->r.getName())
-	        		.map(SimpleGrantedAuthority::new)
-	        		.collect(Collectors.toList());
+	        authorities= new ArrayList<String>(Arrays.asList(user.getRoles()));
+
 	    }
 
 		@Override

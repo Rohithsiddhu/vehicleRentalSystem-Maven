@@ -15,7 +15,7 @@ public interface IUserService {
 	public UserDTO findById(Long id) throws Exception;
 	public void deleteById(Long id);
 	public List<User> findAll();
-	Collection<? extends GrantedAuthority> getAuthorities(User user);
+
 	
 
 }

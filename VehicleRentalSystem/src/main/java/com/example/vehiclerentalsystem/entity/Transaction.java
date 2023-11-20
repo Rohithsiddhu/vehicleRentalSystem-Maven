@@ -21,7 +21,7 @@ public class Transaction {
 	@Min(3)
 	private double amount;
 	@OneToOne
-	@JoinColumn(name="bookingId", referencedColumnName = "userid")
+	@JoinColumn(name="bookingId")
 	private Booking booking;
 	
 	public Transaction() {

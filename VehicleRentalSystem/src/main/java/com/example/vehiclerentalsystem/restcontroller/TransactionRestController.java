@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,27 +28,32 @@ public class TransactionRestController {
 	ITransactionService service;
 	
 	@PostMapping("/api/add")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TransactionDTO addTransaction(TransactionDTO transactionDto) {
 		logger.info("Transaction added successfully");
 		return service.addTransaction(transactionDto);
 		
 	}
 	@PutMapping("/update/{id}")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TransactionDTO updateTransaction(@PathVariable Long id,@RequestBody TransactionDTO transactionDto) {
 		logger.info("Transaction updated successfully");
 		return service.updateTransaction(transactionDto);
 	}
 	@GetMapping("/get/{id}")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TransactionDTO getById(@PathVariable Long id) throws Exception{
 		logger.info("Transaction found with this");
 		return service.findById(id);
 	}
 	@GetMapping("/getall")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public List<Transaction> findAll(){
 		logger.info("Transactions list");
 		return service.findAll();
 	}
 	@DeleteMapping("/delete/{id}")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public void deleteById(@PathVariable Long id) {
 		logger.info("Transaction deleted successfully");
 		 service.deleteById(id);

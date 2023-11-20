@@ -6,7 +6,7 @@ import com.example.vehiclerentalsystem.entity.Role;
 
 public class UserDTO {
 
-	private long userid;
+	private long id;
 	private String email;
 	private  String password;
 	private String name;
@@ -14,7 +14,7 @@ public class UserDTO {
 	private String aadhar;
 	private String drivingLicence;
 	private String address;
-	 private Set<Role> roles ;
+	 private String roles ;
 	
 	public UserDTO() {
 		super();
@@ -22,13 +22,23 @@ public class UserDTO {
 	
 		
 
-		public long getUserid() {
-		return userid;
+	
+
+		public long getId() {
+		return id;
 	}
 
-	public void setUserid(long userid) {
-		this.userid = userid;
+
+
+
+
+	public void setId(long id) {
+		this.id = id;
 	}
+
+
+
+
 
 		public String getEmail() {
 		return email;
@@ -75,13 +85,13 @@ public class UserDTO {
 
 
 
-	public Set<Role> getRoles() {
+	public String getRoles() {
 		return roles;
 	}
 
 
 
-	public void setRoles(Set<Role> roles) {
+	public void setRoles(String roles) {
 		this.roles = roles;
 	}
 

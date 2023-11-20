@@ -38,10 +38,12 @@ public class BookingServiceImpl implements IBookingService {
 	public BookingDTO addBooking(BookingDTO bookingDto) {
 		// Check if user exists by userId
 		// Check if vehicle is available vehicleId
+		logger.info("Getting user details"+ bookingDto.getUserId());
 		Optional<User> optionalUser =userRepository.findById(bookingDto.getUserId());
 		if(optionalUser.isEmpty()) {
 			throw new RuntimeException("User doesnot exist");			 
 		}
+		logger.info("Getting vehicle details: "+ bookingDto.getVehicleId());
 		Optional<Vehicle> optionalVehicle = vehicleRepository.findById(bookingDto.getVehicleId());
 		if(optionalVehicle.isEmpty()) {
 			throw new RuntimeException("Vehicle doesnot exist");

@@ -31,6 +31,7 @@ public class UserRestController {
 	
 	
 	@PostMapping("/add")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public UserDTO addUser(@RequestBody UserDTO user) {
 		logger.info("User added successfully");
 		return service.addUser(user);
@@ -38,11 +39,13 @@ public class UserRestController {
 	}
 	
 	@GetMapping("/get/{id}")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public UserDTO findById(@PathVariable Long id) throws Exception{
 		logger.info("User found with this id");
 		return service.findById(id);
 	}
 	@PutMapping("/put/{id}")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public UserDTO updateUser(@PathVariable Long id,@RequestBody UserDTO user) {
 		logger.info("User updated successfully");
 		return service.updateUser(user);
@@ -55,6 +58,7 @@ public class UserRestController {
 	}
 	
 	@GetMapping("/getall")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public List<User> findAll(){
 		logger.info("User list ");
 		return service.findAll();

@@ -50,17 +50,17 @@ public class SecurityConfig {
 	 */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {      //normal spring security+JWT
-        return http.csrf().disable()               
+        return http.csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests()
-                .requestMatchers("/api/vehicle/get/**","/api/jwtToken/**","/v3/api-docs/**", "/swagger-ui/**","/swagger-resources/**").permitAll()
+                .requestMatchers("/api/vehicle/get**", "/api/user/add", "/api/jwtToken/**", "/v3/api-docs/**", "/swagger-ui/**", "/swagger-resources/**").permitAll()
                 .and()
-                .authorizeHttpRequests().requestMatchers("/api/vehicle/add")
+                .authorizeHttpRequests().requestMatchers("/api/vehicle/**", "/api/user/**", "/api/transaction/**", "/api/testimonial/**", "/api/contactus/**", "/api/booking/**")
                 .authenticated().and()//.formLogin().and().build();
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-               // .authenticationProvider(authenticationProvider())
-               // .addFilterBefore(authFilter,UsernamePasswordAuthenticationFilter.class)
+                .authenticationProvider(authenticationProvider())
+                .addFilterBefore(authFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 

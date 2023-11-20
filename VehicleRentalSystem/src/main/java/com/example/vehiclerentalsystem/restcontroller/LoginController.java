@@ -3,6 +3,7 @@ package com.example.vehiclerentalsystem.restcontroller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ public class LoginController {
 	private LoginService loginservice;
 	
 	@GetMapping("/login")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public ModelAndView login() {
 		ModelAndView mav = new ModelAndView("login");
 		mav.addObject("user",new Login());
@@ -31,6 +33,7 @@ public class LoginController {
 		
 	}
 	@PostMapping("/login")
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public String login(@ModelAttribute("user") Login user) {
 		Login oauthUser = loginservice.login(user.getUsername(),user.getPassword());
 		
@@ -45,6 +48,7 @@ public class LoginController {
 		
 	}
 	@RequestMapping(value = {"/logout"},method = RequestMethod.POST)
+	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public String logoutDo(HttpServletRequest request,HttpServletResponse response) {
 		return "redirect:/login";
 	}
