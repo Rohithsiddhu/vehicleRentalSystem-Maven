@@ -29,19 +29,23 @@ public class ContactUsRestController {
 	}
 	@PostMapping("/add")
 	public ContactUsDTO addDetails(ContactUsDTO contactusDto) {
+		logger.info("Added Contactus details");
 		return service.addDetails(contactusDto);
 	}
 	@PutMapping("/update")
 	public ContactUsDTO updateDetails(ContactUsDTO contactusDto) {
+		logger.info("Updated contactus details");
 		return service.updateDetails(contactusDto);
 
 }
 	@GetMapping("/get/{id}")
 	public ContactUsDTO findById(@PathVariable Long id) throws Exception {
+		logger.info("Contactus details found");
 		return service.findById(id);
 	}
 	@DeleteMapping("/delete")
 	public void deleteById(@PathVariable Long id) {
+		logger.info("Contactus details deleted successfully");
 		service.deleteById(id);
 	}
 }

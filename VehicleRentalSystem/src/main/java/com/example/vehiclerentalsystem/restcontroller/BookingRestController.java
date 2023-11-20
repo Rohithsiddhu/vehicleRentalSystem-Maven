@@ -2,6 +2,8 @@ package com.example.vehiclerentalsystem.restcontroller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +22,8 @@ import com.example.vehiclerentalsystem.service.IBookingService;
 @RequestMapping("/api/booking")
 public class BookingRestController {
 	
+	Logger logger =LoggerFactory.getLogger(BookingRestController.class);
+	
 	@Autowired
 	IBookingService service;
 	
@@ -31,24 +35,29 @@ public class BookingRestController {
 	
 	@PostMapping("/add")
 	public BookingDTO addBooking(@RequestBody BookingDTO booking) {
+		logger.info("Booking added successfully");
 		return service.addBooking(booking);
 	}
 
 	  @PutMapping("/put/{id}")
 	  public BookingDTO updateBooking(@PathVariable Long id,@RequestBody BookingDTO booking) {
+		  logger.info("Booking updated successfully ");
 		  return service.updateBooking(booking);
 	  }
 	  @GetMapping("/get/{id}")
 	  public BookingDTO getBooking(@PathVariable Long id) throws Exception {
+		  logger.info("Booking found");
 		  return service.findById(id);
 	  }
 	  @DeleteMapping("/delete/{id}")
 	  public void deleteById(@PathVariable Long id) {
+		  logger.info("Booking deleted successfully");
 		  service.deleteById(id);
 		  
 	  }
 	  @GetMapping("/getall")
 	  public List<Booking> findAll(){
+		  logger.info("Booking List");
 		  return service.findAll();
 	  }
 }
