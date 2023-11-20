@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 public class Vehicle {
@@ -16,7 +17,9 @@ public class Vehicle {
 	private String modelName;
 	private int capacity;
 	private String type;
+	@Positive
 	private float costPerDay;
+	@Positive
 	private float mileage;
 	private String registrationNumber;
 	

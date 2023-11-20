@@ -8,6 +8,7 @@ import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -25,7 +26,7 @@ import com.example.vehiclerentalsystem.filter.JwtAuthFilter;
 
 @Configuration
 @EnableWebSecurity 
-
+@EnableMethodSecurity
 public class SecurityConfig {
 	
 	@Autowired
@@ -36,18 +37,6 @@ public class SecurityConfig {
 
         return  new UserRolesService();
     }
-
-	/*
-	 * @Bean SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity)
-	 * throws Exception {
-	 * 
-	 * httpSecurity.formLogin(Customizer.withDefaults());
-	 * httpSecurity.csrf().disable();
-	 * httpSecurity.headers().frameOptions().disable(); httpSecurity
-	 * .authorizeHttpRequests() .requestMatchers("/delete").hasAuthority("ADMIN")
-	 * .requestMatchers("/h2-console/**").permitAll() .anyRequest().authenticated();
-	 * return httpSecurity.build(); }
-	 */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {      //normal spring security+JWT
         return http.csrf(csrf -> csrf.disable())
