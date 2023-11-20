@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,14 +30,14 @@ public class TestimonialRestController {
 	@PostMapping("/add")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TestimonialDTO addTestimonial(TestimonialDTO testimonialDto) {
-		logger.info("Testimonial added successfully");
+		  logger.info("Received request to add testimonial: {}", testimonialDto.getTestimonialsid());
 		return service.addTestimonial(testimonialDto);
 		
 	}
 	@PutMapping("/update")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TestimonialDTO updateTestimonial(TestimonialDTO testimonialDto) {
-		logger.info("Testimonial updated successfully");
+		  logger.info("Received request to update Testimonial for Testimonial Id: {}", testimonialDto.getTestimonialsid());
 		return service.updateTestimonial(testimonialDto);
 	}
 	@GetMapping("/get/{id}")
@@ -52,9 +54,10 @@ public class TestimonialRestController {
 	}
 	@DeleteMapping("/delete")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
-	public void deleteById(@PathVariable Long id) {
-		logger.info("Testimonial deleted successfully");
-		service.deleteById(id);
+	public ResponseEntity<String> deleteById(@PathVariable Long id) {
+		  logger.info("Received request to delete testimonial with Id: {}", id);
+		  service.deleteById(id);
+		  return new ResponseEntity<>("Testimonial deleted sucessfully", HttpStatus.ACCEPTED);
 	}
 
 }

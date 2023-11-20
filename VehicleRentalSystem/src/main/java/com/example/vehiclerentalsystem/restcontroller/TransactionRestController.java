@@ -5,6 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,14 +32,14 @@ public class TransactionRestController {
 	@PostMapping("/api/add")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TransactionDTO addTransaction(TransactionDTO transactionDto) {
-		logger.info("Transaction added successfully");
+		 logger.info("Received request to add transaction: {}", transactionDto.getTransactionId());
 		return service.addTransaction(transactionDto);
 		
 	}
 	@PutMapping("/update/{id}")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
 	public TransactionDTO updateTransaction(@PathVariable Long id,@RequestBody TransactionDTO transactionDto) {
-		logger.info("Transaction updated successfully");
+		  logger.info("Received request to update Transaction for Transaction Id: {}", transactionDto.getTransactionId());
 		return service.updateTransaction(transactionDto);
 	}
 	@GetMapping("/get/{id}")
@@ -54,9 +56,10 @@ public class TransactionRestController {
 	}
 	@DeleteMapping("/delete/{id}")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN,ROLE_USER')")
-	public void deleteById(@PathVariable Long id) {
-		logger.info("Transaction deleted successfully");
-		 service.deleteById(id);
+	public ResponseEntity<String> deleteById(@PathVariable Long id) {
+		  logger.info("Received request to delete transaction with Id: {}", id);
+		  service.deleteById(id);
+		  return new ResponseEntity<>("Transaction deleted sucessfully", HttpStatus.ACCEPTED);
 		
 	}
 	

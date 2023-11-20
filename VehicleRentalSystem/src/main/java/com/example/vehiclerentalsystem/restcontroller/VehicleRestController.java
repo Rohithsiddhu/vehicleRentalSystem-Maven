@@ -41,7 +41,7 @@ public class VehicleRestController {
 	@PostMapping("/add")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public VehicleDTO addVehicle(@RequestBody VehicleDTO vehicleDTO) {
-		logger.info("Received request to add vehicle");
+		logger.info("Received request to add vehicle: {}",vehicleDTO.getId());
 		return service.addVehicle(vehicleDTO);
 		
 	}
@@ -62,12 +62,13 @@ public class VehicleRestController {
 	@DeleteMapping("/delete/{id}")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public void deleteById(@PathVariable Long id) {
+		logger.info("Received Request to delete vehicle for id:{}",id);
 		service.deleteById(id);
 	}
 	@GetMapping("/getall")
 	@PreAuthorize("hasAnyAuthority('ROLE_ADMIN')")
 	public List<Vehicle> getAll(){
-		 logger.info("Received request to delete vehicle for Id");
+		 logger.info("Received request to get all vehicles");
 		return service.findAll();
 	}
 	
